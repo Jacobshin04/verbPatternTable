@@ -1,0 +1,32 @@
+table, th, td, tr{
+	border: 1px solid black;
+  	border-collapse: collapse;
+    font-size: 25px;
+    font-family:  calibri, Arial;
+	
+	/* "Noto Naskh Arabic", */
+}
+table {
+	width: fit-content;
+}
+td{
+	font-size: 40px;
+	font-weight: 300;
+}
+th, td {
+  	padding: 20px;
+	text-align: center;
+}
+
+
+#div {
+	display: flex;
+	flex-direction: column;
+}
+
+.green{
+	 background-color: lightgreen;
+}
+.red{
+	background-color: lightcoral;
+}
