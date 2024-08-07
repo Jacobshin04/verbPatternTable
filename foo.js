@@ -196,11 +196,18 @@ F1_Pattern.prototype.F1_N = function F1_N(basicWord, presentArr, pastArr, comman
     displayArr(presentArr, pastArr, commandArr, arguments.callee.name);
 }
 
-F1_Pattern.prototype.F1_A = function F1_A(basicWord, presentArr, pastArr, commandArr){
-    he_past = basicWord[0];
-    he_command = basicWord[1];
-    she_command = basicWord[2];
-    they_command = basicWord[3];
+F1_Pattern.prototype.F1_A = function F1_A(input, tableDisplay){
+    input = arabicVowelRemove(input);
+    console.log(input);
+    he_past = input.addAllVerbs(upStick, upStick );
+    he_command = input.addAllVerbs(upCircle, downStick );
+    she_command = input.addAllVerbs(upStick, upCircle);
+    // he_command = basicWord[1];
+    // she_command = basicWord[2];
+    // they_command = basicWord[3];
+    console.log(he_past);
+    console.log(he_command);
+    console.log(she_command);
 
     presentArr = [];
     presentArr.push(this.lineL[0] + he_command); //I
@@ -231,7 +238,7 @@ F1_Pattern.prototype.F1_A = function F1_A(basicWord, presentArr, pastArr, comman
     // commandArr.push(she_command);
     // commandArr.push(they_command);
 
-    displayArr(presentArr, pastArr, commandArr, arguments.callee.name);
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
 }
 
 F2_Pattern.prototype.F2_A =function F2_A(basicWord, presentArr, pastArr, commandArr){
@@ -280,7 +287,8 @@ function createCell (row, text, element, pattern){
     row.appendChild(cellName);
 }
 
-function displayArr(presentArr, pastArr, commandArr, pattern){
+function displayArr(presentArr, pastArr, commandArr, pattern, tableDisplay){
+    tableDisplay.textContent = "";
     var table = document.createElement("table");
     var tableBody = document.createElement("tableBody"); 
     var row = document.createElement("tr");
@@ -317,8 +325,8 @@ function displayArr(presentArr, pastArr, commandArr, pattern){
      table.appendChild(tableBody);
      var lineBreak = document.createElement("br");
 
-    document.getElementById("div").appendChild(lineBreak);
-    document.getElementById("div").appendChild(table);
+    tableDisplay.appendChild(lineBreak);
+    tableDisplay.appendChild(table);
 
 }
 

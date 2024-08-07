@@ -1,6 +1,20 @@
 //pattern function calls
 const F1_obj = new F1_Pattern();
 const F2_obj = new F2_Pattern();
+const F_1A_display = document.getElementById("F_1A_display");
+const F_1A_input = document.getElementById("F_1A_input");
+F_1A_form.addEventListener("submit",  event => {
+
+    event.preventDefault();
+
+    const arabicWord = F_1A_input.value;
+    F1_obj.F1_A(arabicWord, F_1A_display);
+
+    
+});
+
+
+
 F1_obj.F1_B(F1_B_sample1, presentArr, pastArr, commandArr);
 F1_obj.F1_D(F1_D_sample1, presentArr, pastArr, commandArr);
 F1_obj.F1_M(F1_M_sample1, presentArr, pastArr, commandArr);
