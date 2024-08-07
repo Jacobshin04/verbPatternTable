@@ -2,24 +2,46 @@ body {
 	font-family: Arial, sans-serif;
 }
 
+form {
+	margin: 0;
+}
 table, th, td, tr{
 	border: 1px solid black;
   	border-collapse: collapse;
-    font-size: 25px;
+    font-size: 20px;
     font-family:  calibri, Arial;
 	
 	/* "Noto Naskh Arabic", */
 }
 table {
 	width: fit-content;
+	border-collapse: collapse;
+    margin: 25px 0;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 td{
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: 300;
 }
+th {
+	padding:8px 20px;
+	font-weight: 500;
+}
 th, td {
-  	padding: 20px;
+  	padding: 8px 12px;
 	text-align: center;
+	vertical-align: middle;
+}
+tr:nth-of-type(odd) {
+	background-color: #FEF9EF;
+  }
+
+  tr th[scope="col"] {
+	background-color: rgb(186, 186, 186);
+	color: #fff;
+  }
+.first_column{
+	background-color:  #A2D2FF;
 }
 
 
@@ -32,5 +54,6 @@ th, td {
 	 background-color: lightgreen;
 }
 .red{
-	background-color: lightcoral;
+	background-color: #03346e;
+	color:whitesmoke;
 }

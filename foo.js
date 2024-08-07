@@ -293,7 +293,7 @@ function displayArr(presentArr, pastArr, commandArr, pattern, tableDisplay){
     var tableBody = document.createElement("tableBody"); 
     var row = document.createElement("tr");
 
-    createCell(row, pattern, "th", "");
+    createCell(row, pattern, "th", pattern);
     createCell(row, "present", "th", pattern);
     createCell(row, "past", "th", pattern);
     createCell(row, "command", "th", pattern);
@@ -304,7 +304,8 @@ function displayArr(presentArr, pastArr, commandArr, pattern, tableDisplay){
         
         var pronounCell = document.createElement("th");
         pronounCell.textContent = pronounList[i];
-        cellColorDisplay(pronounCell, pattern);
+        pronounCell.classList.add("first_column");
+        // cellColorDisplay(pronounCell, pattern);
         row.appendChild(pronounCell);
 
         var presentCell = document.createElement("td");
@@ -325,7 +326,7 @@ function displayArr(presentArr, pastArr, commandArr, pattern, tableDisplay){
      table.appendChild(tableBody);
      var lineBreak = document.createElement("br");
 
-    tableDisplay.appendChild(lineBreak);
+    // tableDisplay.appendChild(lineBreak);
     tableDisplay.appendChild(table);
 
 }
