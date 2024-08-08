@@ -45,11 +45,12 @@ F1_Pattern.prototype.F1_B = function F1_B(input, tableDisplay){
 
 
 
-F1_Pattern.prototype.F1_D = function F1_D(basicWord, presentArr, pastArr, commandArr){
-    he_past = basicWord[0];
-    he_command = basicWord[1];
-    she_command = basicWord[2];
-    they_command = basicWord[3];
+F1_Pattern.prototype.F1_D = function F1_D(input, tableDisplay){
+    input = arabicVowelRemove(input); 
+    he_past = input.addAllVerbs(upStick, upStick );
+    he_command = input.addAllVerbs(upCircle, upStick );
+    she_command = input.addAllVerbs(upStick, upCircle);
+    // they_command = input.addAllVerbs(downStick, upCircle);
 
     presentArr = [];
     presentArr.push(this.lineL[0] + he_command); //I
@@ -76,26 +77,30 @@ F1_Pattern.prototype.F1_D = function F1_D(basicWord, presentArr, pastArr, comman
     commandArr.push(this.lineM[2] + he_command); //you1
     commandArr.push(commandArr[1] + this.lineK[0]); //you2
     commandArr.push(commandArr[1] + this.lineK[1]); //you3
-    // commandArr.push(he_command);
-    // commandArr.push(she_command);
-    // commandArr.push(they_command);
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
 
-    displayArr(presentArr, pastArr, commandArr, arguments.callee.name);
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
 }
 
 
 
 
-F1_Pattern.prototype.F1_M = function F1_M(basicWord, presentArr, pastArr, commandArr){
-    he_past = basicWord[0];
-    he_command = basicWord[1];
-    she_command = basicWord[2];
-    they_command = basicWord[3];
+F1_Pattern.prototype.F1_M = function F1_M(input, tableDisplay){
+
+    input = arabicVowelRemove(input); 
+    he_past = input.addAllVerbs(upStick, upW );
+    he_command = he_past;
+    // she_command = input.addAllVerbs(upStick, upCircle);
+    // they_command = input.addAllVerbs(downStick, upCircle);
 
     presentArr = [];
     presentArr.push(this.lineL[0] + he_command); //I
     presentArr.push(this.lineL[1] + he_command); //you1
     presentArr.push(presentArr[1]+ this.lineK[0]); //you2
+    console.log(presentArr[2]);
     presentArr.push(presentArr[1]+ this.lineK[11]); //you3
     presentArr.push(this.lineL[3] + he_command); //he
     presentArr.push(presentArr[1]); //she
@@ -117,18 +122,20 @@ F1_Pattern.prototype.F1_M = function F1_M(basicWord, presentArr, pastArr, comman
     commandArr.push(he_past); //you1
     commandArr.push(he_past + this.lineK[0]); //you2
     commandArr.push(he_past + this.lineK[1]); //you3
-    // commandArr.push(he_command);
-    // commandArr.push(she_command);
-    // commandArr.push(they_command);
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
 
-    displayArr(presentArr, pastArr, commandArr, arguments.callee.name);
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
 }
 
-F1_Pattern.prototype.F1_E = function F1_E(basicWord, presentArr, pastArr, commandArr){
-    he_past = basicWord[0];
-    he_command = basicWord[1];
-    she_command = basicWord[2];
-    they_command = basicWord[3];
+F1_Pattern.prototype.F1_E = function F1_E(input, tableDisplay){
+    input = arabicVowelRemove(input); 
+    he_past = input.addAllVerbs(upStick, upStick );
+    he_command = input.addAllVerbs(upCircle, upComma );
+    she_command = input.addAllVerbs(upStick, upCircle);
+    // they_command = input.addAllVerbs(downStick, upCircle);
 
     presentArr = [];
     presentArr.push(this.lineL[0] + he_command); //I
@@ -155,16 +162,21 @@ F1_Pattern.prototype.F1_E = function F1_E(basicWord, presentArr, pastArr, comman
     commandArr.push(this.lineO[0] + he_command); //you1
     commandArr.push(commandArr[1] + this.lineK[0]); //you2
     commandArr.push(commandArr[1] + this.lineK[1]); //you3
-    // commandArr.push(he_command);
-    // commandArr.push(she_command);
-    // commandArr.push(they_command);
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
 
-    displayArr(presentArr, pastArr, commandArr, arguments.callee.name);
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
 }
 
-F1_Pattern.prototype.F1_N = function F1_N(basicWord, presentArr, pastArr, commandArr){
-    he_past = basicWord[0];
-    you_1_command = basicWord[1];
+//need update
+F1_Pattern.prototype.F1_N = function F1_N(input, tableDisplay){
+    input = arabicVowelRemove(input); 
+    he_past = input.addAllVerbs(upStick, upW);
+    you_1_command = input.addAllVerbs(upComma, upW );
+    // she_command = input.addAllVerbs(upStick, upCircle);
+    // they_command = input.addAllVerbs(downStick, upCircle);
 
 
     presentArr = [];
@@ -192,11 +204,12 @@ F1_Pattern.prototype.F1_N = function F1_N(basicWord, presentArr, pastArr, comman
     commandArr.push(you_1_command); //you1
     commandArr.push(commandArr[1] + this.lineK[0]); //you2
     commandArr.push(commandArr[1] + this.lineK[11]); //you3
-    // commandArr.push(he_command);
-    // commandArr.push(she_command);
-    // commandArr.push(they_command);
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
 
-    displayArr(presentArr, pastArr, commandArr, arguments.callee.name);
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
 }
 
 //done
@@ -356,7 +369,7 @@ function makeForm(pattern){
     form.id = `${pattern}_form`;
     
     var para = document.createElement("p");
-    addStyles(para, {fontSize: `2rem`});
+    addStyles(para, {fontSize: `2rem`, margin: '15px' });
     para.textContent = `${pattern} Verb Form Generator`;
     form.appendChild(para);
 

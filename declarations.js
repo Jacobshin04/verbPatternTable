@@ -97,6 +97,7 @@ function setUpForm(pattern){
         
         + '});');
 }
+//original code
 /* const F1_A_display = document.getElementById("F1_A_display");
 const F1_A_input = document.getElementById("F1_A_input");
 const F1_A_form = document.getElementById("F1_A_form");
@@ -110,19 +111,37 @@ F1_A_form.addEventListener("submit",  event => {
     
 }); */
 
-function changeTextColorArr (textArr, colorArr){
-    resultArr = [];
-    for(let i = 0; i < textArr.length; i++)
-    {
-        color = colorArr[i] === "" ? "black" : colorArr[i];
-        beginTag =   `<span style="color: ${color}">`
-        endTag= '</span>';
+//before
+// function changeTextColorArr (textArr, colorArr){
+//     resultArr = [];
+//     for(let i = 0; i < textArr.length; i++)
+//     {
+//         color = colorArr[i] === "" ? "black" : colorArr[i];
+//         beginTag =   `<span style="color: ${color}">`
+//         endTag= '</span>';
 
-        result = beginTag + textArr[i] + endTag;
-        resultArr.push(result);
+//         result = beginTag + textArr[i] + endTag;
+//         resultArr.push(result);
+//     }
+//     return resultArr;
+// }
+function changeTextColorArr(textArr, colorArr) {
+    resultArr = [];
+    for (let i = 0; i < textArr.length; i++) {
+        const span = document.createElement('span');
+        const color = colorArr[i] === "" ? "black" : colorArr[i];
+    
+        span.style.color = color;
+        span.textContent = textArr[i]; // Safely set the text content
+    
+        // fragment.appendChild(span); // Append the span to the document fragment
+        console.log( span.outerHTML);
+        resultArr.push(span.outerHTML);
     }
-    return resultArr;
-}
+    
+    return resultArr;}
+
+    
 
 class F1_Pattern {
     constructor()
@@ -135,14 +154,14 @@ class F1_Pattern {
             ["blue", "blue", "blue", "blue"]);
 
         this.lineM = changeTextColorArr(["بْتِ", "بْنِ", "إ", "َى", "وْ", "ؤ"], 
-            ["blue", "blue", "rgb(214, 214, 0)", "green", "black", "black"]);
-                               //yellow
+            ["blue", "blue", "orange", "green", "black", "black"]);
+                               
         this.lineN = changeTextColorArr(["بُ", "بْتُ", "بْنُ", "بُ"], 
             ["blue", "blue", "blue", "blue"]);
 
         this.lineO = changeTextColorArr(["أُ", "َيْ"], 
-            ["rgb(214, 214, 0)", "green"]);
-            //yellow
+            ["orange", "green"]);
+            
     }
     
 }

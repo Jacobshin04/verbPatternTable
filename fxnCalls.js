@@ -2,6 +2,10 @@
 // const F1_obj = new F1_Pattern();
 const F1_A_obj = new F1_Pattern();
 const F1_B_obj = new F1_Pattern();
+const F1_D_obj = new F1_Pattern();
+const F1_M_obj = new F1_Pattern();
+const F1_E_obj = new F1_Pattern();
+const F1_N_obj = new F1_Pattern();
 
 const F2_obj = new F2_Pattern();
 
@@ -11,6 +15,18 @@ setUpForm("F1_A");
 makeForm("F1_B");
 setUpForm("F1_B");
 
+makeForm("F1_D");
+setUpForm("F1_D");
+
+makeForm("F1_M");
+setUpForm("F1_M");
+
+makeForm("F1_E");
+setUpForm("F1_E");
+
+//need update
+makeForm("F1_N");
+setUpForm("F1_N");
 /* const F1_A_display = document.getElementById("F1_A_display");
 const F1_A_input = document.getElementById("F1_A_input");
 const F1_A_form = document.getElementById("F1_A_form");
