@@ -367,8 +367,8 @@ F1_Pattern.prototype.F1_H = function F1_H(input, tableDisplay){
     commandArr.push(he_command); //you1
     commandArr.push(commandArr[1] + this.lineK[0]); //you2
     commandArr.push(commandArr[1] + this.lineK[1]); //you3
-    commandArr.push(he_command); //he
-    commandArr.push(she_command);
+    commandArr.push("");
+    commandArr.push("")
     commandArr.push("");
     commandArr.push("");
 
