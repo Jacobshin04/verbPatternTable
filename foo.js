@@ -337,10 +337,10 @@ F1_Pattern.prototype.F1_H = function F1_H(input, tableDisplay){
 
     input = arabicVowelRemove(input);
     he_past = input.addAllVerbs("");
-    he_command = input.addAllVerbs(upComma);
-    he_command = he_command.replace("ا", "و");
-    she_command = input.addAllVerbs(upComma);
-    she_command = she_command.replace("ا", "");
+    he_command = input.replace("ا", "و");
+    he_command = he_command.addAllVerbs(upComma);
+    she_command = input.replace("ا", "");
+    she_command = she_command.addAllVerbs(upComma);
 
     presentArr = [];
     presentArr.push(this.lineL[0] + he_command); //I
@@ -367,6 +367,48 @@ F1_Pattern.prototype.F1_H = function F1_H(input, tableDisplay){
     commandArr.push(he_command); //you1
     commandArr.push(commandArr[1] + this.lineK[0]); //you2
     commandArr.push(commandArr[1] + this.lineK[1]); //you3
+    commandArr.push(he_command); //he
+    commandArr.push(she_command);
+    commandArr.push("");
+    commandArr.push("");
+
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
+} //end of F1_H
+
+F1_Pattern.prototype.F1_F = function F1_F(input, tableDisplay){
+
+    input = arabicVowelRemove(input);
+    he_past = input.addAllVerbs("");
+    he_command = input.replace("ا", "ي");
+    he_command = he_command.addAllVerbs(downStick);
+    she_command = input.replace("ا", "");
+    she_command = she_command.addAllVerbs(downStick, upCircle);
+
+    presentArr = [];
+    presentArr.push(this.lineL[0] + he_command); //I
+    presentArr.push(this.lineL[1] + he_command); //you1
+    presentArr.push(presentArr[1] + this.lineK[0]); //you2
+    presentArr.push(presentArr[1] + this.lineK[1]); //you3
+    presentArr.push(this.lineL[3] + he_command); //he
+    presentArr.push(presentArr[1]); //she
+    presentArr.push(presentArr[4] + this.lineK[11]); //they
+    presentArr.push(this.lineL[2] + he_command); //we
+
+    pastArr = [];
+    pastArr.push(she_command + this.lineK[4]); //I
+    pastArr.push(pastArr[0]); //you1
+    pastArr.push(she_command + this.lineK[8]); //you2
+    pastArr.push(she_command + this.lineK[9]); //you3
+    pastArr.push(he_past); //he
+    pastArr.push(he_past + this.lineK[5]); //she
+    pastArr.push(he_past + this.lineK[11]); //they
+    pastArr.push(she_command + this.lineK[10]); //we
+
+    commandArr = [];
+    commandArr.push(""); //I
+    commandArr.push(he_command); //you1
+    commandArr.push(commandArr[1] + this.lineK[0]); //you2
+    commandArr.push(commandArr[1] + this.lineK[11]); //you3
     commandArr.push(""); //he
     commandArr.push("");
     commandArr.push("");

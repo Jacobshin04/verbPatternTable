@@ -9,6 +9,7 @@ const F1_N_obj = new F1_Pattern();
 const F1_C_obj = new F1_Pattern();
 const F1_L_obj = new F1_Pattern();
 const F1_H_obj = new F1_Pattern();
+const F1_F_obj = new F1_Pattern();
 
 const F2_obj = new F2_Pattern();
 
@@ -38,6 +39,9 @@ setUpForm("F1_L");
 
 makeForm("F1_H");
 setUpForm("F1_H");
+
+makeForm("F1_F");
+setUpForm("F1_F");
 
 /* const F1_A_display = document.getElementById("F1_A_display");
 const F1_A_input = document.getElementById("F1_A_input");
