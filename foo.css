@@ -8,12 +8,22 @@ form {
 	margin: 0;
 }
 
+.verbPatternForm{
+	width: 500px;
+	height: 750px;
+	border: 2px solid black;
+	margin: 20px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+	padding: 15px;
+	text-align: center;
+    
+}
 #formsContainer{
 	display: flex;
 	flex-direction: column;
 	width: 500px;
 	justify-content: center;
-	border: 2px solid black;
 }
 table, th, td, tr{
 	border: 1px solid black;
