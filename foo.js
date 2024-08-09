@@ -523,7 +523,9 @@ function cellColorDisplay(element, pattern){
 function makeForm(pattern){
     var form = document.createElement("form");
     form.id = `${pattern}_form`;
-    addStyles(form, {width: '500px', height: '800px'})
+    addStyles(form, {width: '500px', height: '750px', border: '2px solid black', margin: "20px", boxShadow: "0 0 20px rgba(0, 0, 0, 0.15)", 
+        borderRadius: '10px', padding: '15px'
+    });
     
     var para = document.createElement("p");
     addStyles(para, {fontSize: `2rem`, margin: '15px' });

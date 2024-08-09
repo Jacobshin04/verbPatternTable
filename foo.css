@@ -13,6 +13,7 @@ form {
 	flex-direction: column;
 	width: 500px;
 	justify-content: center;
+	border: 2px solid black;
 }
 table, th, td, tr{
 	border: 1px solid black;
