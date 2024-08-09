@@ -1,9 +1,18 @@
 body {
+	display: flex;
 	font-family: Arial, sans-serif;
+	justify-content: center;
 }
 
 form {
 	margin: 0;
+}
+
+#formsContainer{
+	display: flex;
+	flex-direction: column;
+	width: 500px;
+	justify-content: center;
 }
 table, th, td, tr{
 	border: 1px solid black;
@@ -16,7 +25,7 @@ table, th, td, tr{
 table {
 	width: fit-content;
 	border-collapse: collapse;
-    margin: 25px 0;
+    margin: 20px 0;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 td{
@@ -29,7 +38,7 @@ th {
 	font-weight: 500;
 }
 th, td {
-  	padding: 4px 12px;
+  	padding: 3px 12px;
 	text-align: center;
 	vertical-align: middle;
 }

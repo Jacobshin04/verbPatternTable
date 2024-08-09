@@ -216,16 +216,9 @@ F1_Pattern.prototype.F1_N = function F1_N(input, tableDisplay){
 F1_Pattern.prototype.F1_A = function F1_A(input, tableDisplay){
 
     input = arabicVowelRemove(input);
-    console.log(input);
     he_past = input.addAllVerbs(upStick, upStick );
     he_command = input.addAllVerbs(upCircle, downStick );
     she_command = input.addAllVerbs(upStick, upCircle);
-    // he_command = basicWord[1];
-    // she_command = basicWord[2];
-    // they_command = basicWord[3];
-    console.log(he_past);
-    console.log(he_command);
-    console.log(she_command);
 
     presentArr = [];
     presentArr.push(this.lineL[0] + he_command); //I
@@ -253,6 +246,128 @@ F1_Pattern.prototype.F1_A = function F1_A(input, tableDisplay){
     commandArr.push(this.lineM[2] + he_command + this.lineK[0]); //you2
     commandArr.push(this.lineM[2] + he_command + this.lineK[1]); //you3
     commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
+}
+
+F1_Pattern.prototype.F1_C = function F1_C(input, tableDisplay){
+
+    input = arabicVowelRemove(input);
+    he_past = input.addAllVerbs(downStick, downStick);
+    he_command = input.addAllVerbs(upCircle, downStick);
+    she_command = input.addAllVerbs(downStick, upCircle);
+
+    presentArr = [];
+    presentArr.push(this.lineL[0] + he_command); //I
+    presentArr.push(this.lineM[0] + he_command); //you1
+    presentArr.push(presentArr[1]+ this.lineK[0]); //you2
+    presentArr.push(presentArr[1]+ this.lineK[1]); //you3
+    presentArr.push(this.lineL[3] + he_command); //he
+    presentArr.push(presentArr[1]); //she
+    presentArr.push(presentArr[4] + this.lineK[1]); //they
+    presentArr.push(this.lineM[1] + he_command); //we
+
+    pastArr = [];
+    pastArr.push(he_command + this.lineK[7]); //I
+    pastArr.push(pastArr[0]); //you1
+    pastArr.push(he_command + this.lineK[2]); //you2
+    pastArr.push(he_command + this.lineK[3]); //you3
+    pastArr.push(he_past); //he
+    pastArr.push(she_command + this.lineK[5]); //she
+    pastArr.push(she_command + this.lineK[1]); //they
+    pastArr.push(he_command + this.lineK[6]); //we
+
+    commandArr = [];
+    commandArr.push(""); //I
+    commandArr.push(this.lineM[2] + he_command); //you1
+    commandArr.push(this.lineM[2] + he_command + this.lineK[0]); //you2
+    commandArr.push(this.lineM[2] + he_command + this.lineK[1]); //you3
+    commandArr.push(""); //he
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
+}
+
+F1_Pattern.prototype.F1_L = function F1_L(input, tableDisplay){
+
+    input = arabicVowelRemove(input);
+    he_past = input.addAllVerbs(upStick, upW);
+    he_command = input.addAllVerbs(downStick, upW);
+    she_command = input.addAllVerbs(upStick, upCircle);
+
+    presentArr = [];
+    presentArr.push(this.lineL[0] + he_command); //I
+    presentArr.push(this.lineL[1] + he_command); //you1
+    presentArr.push(presentArr[1]+ this.lineK[0]); //you2
+    presentArr.push(presentArr[1]+ this.lineK[1]); //you3
+    presentArr.push(this.lineL[3] + he_command); //he
+    presentArr.push(presentArr[1]); //she
+    presentArr.push(presentArr[4] + this.lineK[11]); //they
+    presentArr.push(this.lineL[2] + he_command); //we
+
+    pastArr = [];
+    pastArr.push(he_past + this.lineO[1] + this.lineK[4]); //I
+    pastArr.push(pastArr[0]); //you1
+    pastArr.push(he_past + this.lineO[1] + this.lineK[8]); //you2
+    pastArr.push(he_past + this.lineO[1] + this.lineK[9]); //you3
+    pastArr.push(he_past); //he
+    pastArr.push(he_past + this.lineK[5]); //she
+    pastArr.push(he_past + this.lineK[11]); //they
+    pastArr.push(he_past + this.lineO[1] + this.lineK[10]); //we
+
+    commandArr = [];
+    commandArr.push(""); //I
+    commandArr.push(he_command); //you1
+    commandArr.push(he_command + this.lineK[0]); //you2
+    commandArr.push(he_command + this.lineK[1]); //you3
+    commandArr.push(""); //he
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
+} //end of F1_L
+
+F1_Pattern.prototype.F1_H = function F1_H(input, tableDisplay){
+
+    input = arabicVowelRemove(input);
+    he_past = input.addAllVerbs("");
+    he_command = input.addAllVerbs(upComma);
+    he_command = he_command.replace("ا", "و");
+    she_command = input.addAllVerbs(upComma);
+    she_command = she_command.replace("ا", "");
+
+    presentArr = [];
+    presentArr.push(this.lineL[0] + he_command); //I
+    presentArr.push(this.lineL[1] + he_command); //you1
+    presentArr.push(presentArr[1] + this.lineK[0]); //you2
+    presentArr.push(presentArr[1] + this.lineK[1]); //you3
+    presentArr.push(this.lineL[3] + he_command); //he
+    presentArr.push(presentArr[1]); //she
+    presentArr.push(presentArr[4] + this.lineK[1]); //they
+    presentArr.push(this.lineL[2] + he_command); //we
+
+    pastArr = [];
+    pastArr.push(she_command + this.lineK[7]); //I
+    pastArr.push(pastArr[0]); //you1
+    pastArr.push(she_command + this.lineK[2]); //you2
+    pastArr.push(she_command + this.lineK[3]); //you3
+    pastArr.push(he_past); //he
+    pastArr.push(he_past + this.lineK[5]); //she
+    pastArr.push(he_past + this.lineK[1]); //they
+    pastArr.push(she_command + this.lineK[6]); //we
+
+    commandArr = [];
+    commandArr.push(""); //I
+    commandArr.push(he_command); //you1
+    commandArr.push(commandArr[1] + this.lineK[0]); //you2
+    commandArr.push(commandArr[1] + this.lineK[1]); //you3
+    commandArr.push(""); //he
     commandArr.push("");
     commandArr.push("");
     commandArr.push("");
@@ -298,6 +413,47 @@ F2_Pattern.prototype.F2_A =function F2_A(basicWord, presentArr, pastArr, command
     displayArr(presentArr, pastArr, commandArr, arguments.callee.name);
 }
 
+/* TEMPLET
+F1_Pattern.prototype.F1_* = function F1_*(input, tableDisplay){
+
+    input = arabicVowelRemove(input);
+    he_past = input.addAllVerbs(,);
+    he_command = input.addAllVerbs(,);
+    she_command = input.addAllVerbs(,);
+
+    presentArr = [];
+    presentArr.push(); //I
+    presentArr.push(); //you1
+    presentArr.push(); //you2
+    presentArr.push(); //you3
+    presentArr.push(); //he
+    presentArr.push(); //she
+    presentArr.push(); //they
+    presentArr.push(); //we
+
+    pastArr = [];
+    pastArr.push(); //I
+    pastArr.push(); //you1
+    pastArr.push(); //you2
+    pastArr.push(); //you3
+    pastArr.push(he_past); //he
+    pastArr.push(); //she
+    pastArr.push(); //they
+    pastArr.push(); //we
+
+    commandArr = [];
+    commandArr.push(""); //I
+    commandArr.push(); //you1
+    commandArr.push(); //you2
+    commandArr.push(); //you3
+    commandArr.push(""); //he
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
+}
+ */
 
 function createCell (row, text, element, pattern){
     var cellName = document.createElement(element);
@@ -367,6 +523,7 @@ function cellColorDisplay(element, pattern){
 function makeForm(pattern){
     var form = document.createElement("form");
     form.id = `${pattern}_form`;
+    addStyles(form, {width: '500px', height: '800px'})
     
     var para = document.createElement("p");
     addStyles(para, {fontSize: `2rem`, margin: '15px' });
@@ -386,9 +543,9 @@ function makeForm(pattern){
     button.textContent = "Generate";
     form.appendChild(button);
 
-    var div = document.createElement("div");
-    div.id = `${pattern}_display`;
-    form.appendChild(div);
+    var displayDiv = document.createElement("div");
+    displayDiv.id = `${pattern}_display`;
+    form.appendChild(displayDiv);
 
-    document.getElementById("div").appendChild(form);
+    document.getElementById("formsContainer").appendChild(form);
 }

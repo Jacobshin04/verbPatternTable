@@ -1,4 +1,3 @@
-//test
 
 const h1 = document.getElementById("myH1");
 const h2 = document.getElementById("myH2");
@@ -135,7 +134,6 @@ function changeTextColorArr(textArr, colorArr) {
         span.textContent = textArr[i]; // Safely set the text content
     
         // fragment.appendChild(span); // Append the span to the document fragment
-        console.log( span.outerHTML);
         resultArr.push(span.outerHTML);
     }
     
