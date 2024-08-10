@@ -324,7 +324,7 @@ F1_Pattern.prototype.F1_L = function F1_L(input, tableDisplay){
     commandArr.push(""); //I
     commandArr.push(he_command); //you1
     commandArr.push(he_command + this.lineK[0]); //you2
-    commandArr.push(he_command + this.lineK[1]); //you3
+    commandArr.push(he_command + this.lineK[11]); //you3
     commandArr.push(""); //he
     commandArr.push("");
     commandArr.push("");
