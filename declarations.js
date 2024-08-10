@@ -152,7 +152,7 @@ class F1_Pattern {
             ["blue", "blue", "blue", "blue"]);
 
         this.lineM = changeTextColorArr(["بْتِ", "بْنِ", "إ", "َى", "وْ", "ؤ"], 
-            ["blue", "blue", "orange", "green", "black", "black"]);
+            ["blue", "blue", "orange", "green", "green", "black"]);
                                
         this.lineN = changeTextColorArr(["بُ", "بْتُ", "بْنُ", "بُ"], 
             ["blue", "blue", "blue", "blue"]);

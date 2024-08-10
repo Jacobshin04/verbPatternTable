@@ -659,9 +659,9 @@ F1_Pattern.prototype.F1_R = function F1_R(input, tableDisplay){
     commandArr.push(this.lineO[0] + he_command); //you1
     commandArr.push(this.lineO[0] + he_command + this.lineK[0]); //you2
     commandArr.push(this.lineO[0] + he_command + this.lineK[1]); //you3
-    commandArr.push(he_command); //he
-    commandArr.push(she_command);
-    commandArr.push(they_command);
+    commandArr.push(""); //he
+    commandArr.push("");
+    commandArr.push("");
     commandArr.push("");
 
     displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
@@ -685,7 +685,7 @@ F1_Pattern.prototype.F1_I = function F1_I(input, tableDisplay){
     presentArr.push(this.lineM[1] + he_command); //we
 
     pastArr = [];
-    pastArr.push(he_past + this.lineK[4]); //I
+    pastArr.push(he_past + this.lineK[7]); //I
     pastArr.push(pastArr[0]); //you1
     pastArr.push(he_past + this.lineK[2]); //you2
     pastArr.push(he_past + this.lineK[3]); //you3
