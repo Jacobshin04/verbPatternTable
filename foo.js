@@ -867,9 +867,9 @@ F1_Pattern.prototype.F1_W = function F1_W(input, tableDisplay){
     commandArr.push(this.lineM[2] + he_command); //you1
     commandArr.push(this.lineM[2] + he_command + this.lineK[0]); //you2
     commandArr.push(this.lineM[2] + he_command + this.lineK[1]); //you3
-    commandArr.push(he_command); //he
-    commandArr.push(she_command);
-    commandArr.push(they_command);
+    commandArr.push(""); //he
+    commandArr.push("");
+    commandArr.push("");
     commandArr.push("");
 
     displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
@@ -907,8 +907,8 @@ F1_Pattern.prototype.F1_Z = function F1_Z(input, tableDisplay){
     commandArr.push(this.lineO[0] + he_command + this.lineK[0]); //you1
     commandArr.push(commandArr[1]); //you2
     commandArr.push(this.lineO[0] + he_command + this.lineK[1]); //you3
-    commandArr.push(he_command); //he
-    commandArr.push(she_command);
+    commandArr.push(""); //he
+    commandArr.push("");
     commandArr.push("");
     commandArr.push("");
 
@@ -941,16 +941,16 @@ F1_Pattern.prototype.F1_Zc = function F1_Zc(input, tableDisplay){
     pastArr.push(he_past); //he
     pastArr.push(they_command + this.lineK[5]); //she
     pastArr.push(they_command + this.lineK[1]); //they
-    pastArr.push(they_command + this.lineK[6]); //we
+    pastArr.push(she_command + this.lineK[6]); //we
 
     commandArr = [];
     commandArr.push(""); //I
     commandArr.push(""); //you1
     commandArr.push(""); //you2
     commandArr.push(""); //you3
-    commandArr.push(he_command); //he
-    commandArr.push(she_command);
-    commandArr.push(they_command);
+    commandArr.push(""); //he
+    commandArr.push("");
+    commandArr.push("");
     commandArr.push("");
 
     displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
