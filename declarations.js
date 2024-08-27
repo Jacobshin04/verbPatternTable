@@ -4,7 +4,8 @@ const h2 = document.getElementById("myH2");
 const h3 = document.getElementById("myH3");
 
 const arrLength = 8;
-const pronounList = ["I", "you_1", "you_2", "you_3", "he", "she", "they", "we"];
+const pronounList = ["أَنا", "إنْتَ", "إنْتِ", "إنْتُوا", "هو", "هي", "هم", "إِحْنا"];
+// const pronounList = ["I", "you_1", "you_2", "you_3", "he", "she", "they", "we"];
 const patternComfirmedList = [];
 
 presentArr = [];

@@ -27,71 +27,94 @@ const F1_Zc_obj = new F1_Pattern();
 const F2_obj = new F2_Pattern();
 
 makeForm("F1_A");
+// makeWordListForm("F1_A");
 setUpForm("F1_A");
 
+// makeWordListForm("F1_B");
 makeForm("F1_B");
 setUpForm("F1_B");
 
+// makeWordListForm("F1_D");
 makeForm("F1_D");
 setUpForm("F1_D");
 
+// makeWordListForm("F1_M");
 makeForm("F1_M");
 setUpForm("F1_M");
 
+// makeWordListForm("F1_E");
 makeForm("F1_E");
 setUpForm("F1_E");
 
+// makeWordListForm("F1_N");
 makeForm("F1_N");
 setUpForm("F1_N");
 
+// makeWordListForm("F1_C");
 makeForm("F1_C");
 setUpForm("F1_C");
 
+// makeWordListForm("F1_L");
 makeForm("F1_L");
 setUpForm("F1_L");
 
+// makeWordListForm("F1_H");
 makeForm("F1_H");
 setUpForm("F1_H");
 
+// makeWordListForm("F1_F");
 makeForm("F1_F");
 setUpForm("F1_F");
 
+// makeWordListForm("F1_G");
 makeForm("F1_G");
 setUpForm("F1_G");
 
+// makeWordListForm("F1_T");
 makeForm("F1_T");
 setUpForm("F1_T");
 
+// makeWordListForm("F1_J");
 makeForm("F1_J");
 setUpForm("F1_J");
 
+// makeWordListForm("F1_K");
 makeForm("F1_K");
 setUpForm("F1_K");
 
+// makeWordListForm("F1_S");
 makeForm("F1_S");
 setUpForm("F1_S");
 
+// makeWordListForm("F1_R");
 makeForm("F1_R");
 setUpForm("F1_R");
 
+// makeWordListForm("F1_I");
 makeForm("F1_I");
 setUpForm("F1_I");
 
+// makeWordListForm("F1_P");
 makeForm("F1_P");
 setUpForm("F1_P");
 
+// makeWordListForm("F1_Y");
 makeForm("F1_Y");
 setUpForm("F1_Y");
 
+// makeWordListForm("F1_X");
 makeForm("F1_X");
 setUpForm("F1_X");
 
+// makeWordListForm("F1_W");
 makeForm("F1_W");
 setUpForm("F1_W");
 
+// makeWordListForm("F1_Z");
 makeForm("F1_Z");
 setUpForm("F1_Z");
 
+// makeWordListForm("F1_Zc");
 makeForm("F1_Zc");
 setUpForm("F1_Zc");
 /* const F1_A_display = document.getElementById("F1_A_display");

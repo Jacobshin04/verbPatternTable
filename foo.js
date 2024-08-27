@@ -1050,9 +1050,12 @@ function displayArr(presentArr, pastArr, commandArr, pattern, tableDisplay){
     var row = document.createElement("tr");
 
     createCell(row, pattern, "th", pattern);
-    createCell(row, "present", "th", pattern);
-    createCell(row, "past", "th", pattern);
-    createCell(row, "command", "th", pattern);
+    createCell(row, "المُضارع", "th", pattern);
+    createCell(row, "الماضي", "th", pattern);
+    createCell(row, "الأمر", "th", pattern);    
+    // createCell(row, "present", "th", pattern);
+    // createCell(row, "الماضي", "th", pattern);
+    // createCell(row, "command", "th", pattern);
     tableBody.appendChild(row);
     for(let i = 0; i < arrLength; i++)
     {
@@ -1133,4 +1136,56 @@ function makeForm(pattern){
     form.appendChild(displayDiv);
 
     document.getElementById("formsContainer").appendChild(form);
+}
+
+function makeWordListForm(pattern){
+    var form = document.createElement("form");
+    form.id = `${pattern}_wordList_form`;
+    form.classList.add("wordListForm")
+
+    var table = document.createElement("table");
+    var tableBody = document.createElement("tableBody"); 
+    var row = document.createElement("tr");
+
+    createCell(row, pattern, "th", pattern);
+    createCell(row, getPatternArabicName(), "th", pattern);
+  
+    // createCell(row, "present", "th", pattern);
+    // createCell(row, "الماضي", "th", pattern);
+    // createCell(row, "command", "th", pattern);
+    tableBody.appendChild(row);
+    for(let i = 0; i < arrLength; i++)
+    {
+        var row = document.createElement("tr"); 
+        
+        var pronounCell = document.createElement("th");
+        pronounCell.textContent = pronounList[i];
+        pronounCell.classList.add("first_column");
+        // cellColorDisplay(pronounCell, pattern);
+        row.appendChild(pronounCell);
+
+        var presentCell = document.createElement("td");
+        presentCell.innerHTML = presentArr[i];
+        row.appendChild(presentCell);
+      
+        var pastCell = document.createElement("td");
+        pastCell.innerHTML = pastArr[i];
+        row.appendChild(pastCell);
+
+        var commandCell = document.createElement("td");
+        commandCell.innerHTML = commandArr[i];
+        row.appendChild(commandCell);
+     
+        tableBody.appendChild(row); 
+    }
+
+     table.appendChild(tableBody);
+     addStyles(table, {marginLeft: 'auto',
+        marginRight: 'auto'
+    })
+     var lineBreak = document.createElement("br");
+
+    // tableDisplay.appendChild(lineBreak);
+    tableDisplay.appendChild(table);
+    document.getElementById("wordListContainer").appendChild(form);
 }
