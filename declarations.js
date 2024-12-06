@@ -415,12 +415,22 @@ class F1_Pattern {
 class F2_Pattern {
     constructor()
     {
-        this.lineK = ["ي", "وا", "تِ", "توا", "ت", "َت", "نا",
-            "ِت", "ْتِ", "ْتوا", "ْنا", "ُوا", "ِي" ];
-        this.lineL = ["بَ", "بِتْ", "بِنْ", "بِ"];
-        this.lineM = ["بْتِ", "بْنِ", "إ", "َى", "وْ", "ؤ"];
-        this.lineN = ["بُ", "بْتُ", "بْنُ", "بُ"];
-        this.lineO = ["أُ", "َيْ"];
+        this.lineK = changeTextColorArr(["ي", "وا", "تِ", "توا", "ت", "َت", "نا",
+            "ِت", "ْتِ", "ْتوا", "ْنا", "ُوا", "ِي" ], 
+        ["purple", "purple", "red", "red", "red", "red", "red", "red", "red", "red", "red", "purple", "red"]);
+
+        this.lineL = changeTextColorArr(["بَ", "بِتْ", "بِنْ", "بِ"], 
+            ["blue", "blue", "blue", "blue"]);
+
+        this.lineM = changeTextColorArr(["بْتِ", "بْنِ", "إ", "َى", "وْ", "ؤ"], 
+            ["blue", "blue", "orange", "green", "green", "black"]);
+                               
+        this.lineN = changeTextColorArr(["بُ", "بْتُ", "بْنُ", "بُ"], 
+            ["blue", "blue", "blue", "blue"]);
+
+        this.lineO = changeTextColorArr(["أُ", "َيْ"], 
+            ["orange", "green"]);
+            
     }
 
 }
