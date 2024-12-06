@@ -141,6 +141,253 @@ function changeTextColorArr(textArr, colorArr) {
     return resultArr;}
 
     
+function getPatternArabicName(pattern)
+{
+    arabicName = "";
+    switch(pattern){
+        case "F1_A":
+            arabicName = "كسرة: فَعَل-إفْعِل- بْتِفْعِل";
+            break;
+
+        case "F1_B":
+            arabicName = "فَتْحَة: فِعِل-إفْعَل- بْتِفْعَل";
+            break;
+
+        case "F1_L":
+            arabicName = "كسرة_2: فَلّ-فِلّ- بِتْفِلّ";
+            break;
+
+        case "F1_E":
+            arabicName = "ضَمَّة: فَعَل-أُفْعُل- بْتُفْعُل";
+            break;
+
+        case "F1_N":
+            arabicName = "ضَمَّة_2: فَلّ-فُلّ- بِتْفُلّ";
+            break;
+
+        case "F1_H":
+            arabicName = 'ضَمَّة "ا-و": فال-فُول-بِتْفُول';
+            break;            
+
+        case "F1_F":
+            arabicName = 'كسرة"ا-ي": فال-فِيل-بِتْفِيل';
+            break;
+
+        case "F1_J":
+            arabicName = 'كسرة"ى-ي": حَكَى-إحْكي-بْتِحْكي';
+            break;    
+
+        case "F1_K":
+            arabicName = 'فَتْحَة"ي-ى": نِسِي-إنْسَى-بْتِنْسَى';
+            break;
+
+        case "F1_S":
+            arabicName = 'ضَمَّة "أ-وْ": أَخَذ-خُذ-بْتُوْخُذ';
+            break;
+
+        case "F1_Y":
+            arabicName = 'ضَمَّة "أ-وْ": أَخَذ-خُذ-بْتُوْخُذ';
+            break;
+
+        case "F1_G":
+            arabicName = '"ا-ا": فال-فال-بِتْفال"';
+            break;
+
+        case "F1_T":
+            arabicName = 'ََا": بَدا-إبْدا-بْتِبْدا"';
+            break;
+            
+        case "F1_C":
+            arabicName = 'كسرة: فِعِل-إفْعِل- بْتِفْعِل';
+            break;
+            
+        case "F1_M":
+            arabicName = 'فَتْحَة_2: ظَلّ-ظَلّ- بِتْظَلّ';
+            break;
+            
+        case "F1_X":
+            arabicName = 'فتحة"و":وَعَظ-أُوْعَظ- بْتُوعَظ';
+            break;
+            
+        case "F1_W":
+            arabicName = 'كسرة"و":وَعَد-إوْعِد- بْتُوعِد';
+            break;
+            
+        case "F1_Z":
+            arabicName = 'ضَمَّة"ى-ي":وَفَى-أُوفي- بْتُوفي';
+            break;
+            
+        case "F1_Zc":
+            arabicName = 'فتحة"وِ_وَ":طُوِل-بْتِطْوَل';
+            break;
+            
+        case "F1_R":
+            arabicName = 'ضَمَّة" أ-ؤ": أَمَر- أُؤمُر-بْتُؤمُر';
+            break;
+            
+        case "F1_I":
+            arabicName = 'فتحة"أ-أ": سَأَل-إسْأَل-بْتِسْأَل';
+            break;
+            
+        case "F1_P":
+            arabicName = 'كسرة"إِ-ي":إجى-بْتِيجي';
+            break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;                                                        
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+            
+        // case "F1_A":
+        //     arabicName = '';
+        //     break;
+        default:
+            arabicName = "Pattern Not Found";
+    }
+    return arabicName;
+}
+
+
+
+//editing
+function getPatternWordList(pattern){
+    wordList = "";
+    switch(pattern){
+        case "F1_A":
+            wordList = ['حَجَز' , 'حَمَل' , 'خَدَم' , 'عَزَم' , 'غَسَل' , 'قَسَم' , 'كَبَس' , 'كَبَس' , 'كَسَر' , 'مَسَك'];
+            break;
+
+        case "F1_B":
+            wordList = "فَتْحَة: فِعِل-إفْعَل- بْتِفْعَل";
+            break;
+
+        case "F1_L":
+            wordList = "كسرة_2: فَلّ-فِلّ- بِتْفِلّ";
+            break;
+
+        case "F1_E":
+            wordList = "ضَمَّة: فَعَل-أُفْعُل- بْتُفْعُل";
+            break;
+
+        case "F1_N":
+            wordList = "ضَمَّة_2: فَلّ-فُلّ- بِتْفُلّ";
+            break;
+
+        case "F1_H":
+            wordList = 'ضَمَّة "ا-و": فال-فُول-بِتْفُول';
+            break;            
+
+        case "F1_F":
+            wordList = 'كسرة"ا-ي": فال-فِيل-بِتْفِيل';
+            break;
+
+        case "F1_J":
+            wordList = 'كسرة"ى-ي": حَكَى-إحْكي-بْتِحْكي';
+            break;    
+
+        case "F1_K":
+            wordList = 'فَتْحَة"ي-ى": نِسِي-إنْسَى-بْتِنْسَى';
+            break;
+
+        case "F1_S":
+            wordList = 'ضَمَّة "أ-وْ": أَخَذ-خُذ-بْتُوْخُذ';
+            break;
+
+        case "F1_Y":
+            wordList = 'ضَمَّة "أ-وْ": أَخَذ-خُذ-بْتُوْخُذ';
+            break;
+
+        case "F1_G":
+            wordList = '"ا-ا": فال-فال-بِتْفال"';
+            break;
+
+        case "F1_T":
+            wordList = 'ََا": بَدا-إبْدا-بْتِبْدا"';
+            break;
+            
+        case "F1_C":
+            wordList = 'كسرة: فِعِل-إفْعِل- بْتِفْعِل';
+            break;
+            
+        case "F1_M":
+            wordList = 'فَتْحَة_2: ظَلّ-ظَلّ- بِتْظَلّ';
+            break;
+            
+        case "F1_X":
+            wordList = 'فتحة"و":وَعَظ-أُوْعَظ- بْتُوعَظ';
+            break;
+            
+        case "F1_W":
+            wordList = 'كسرة"و":وَعَد-إوْعِد- بْتُوعِد';
+            break;
+            
+        case "F1_Z":
+            wordList = 'ضَمَّة"ى-ي":وَفَى-أُوفي- بْتُوفي';
+            break;
+            
+        case "F1_Zc":
+            wordList = 'فتحة"وِ_وَ":طُوِل-بْتِطْوَل';
+            break;
+            
+        case "F1_R":
+            wordList = 'ضَمَّة" أ-ؤ": أَمَر- أُؤمُر-بْتُؤمُر';
+            break;
+            
+        case "F1_I":
+            wordList = 'فتحة"أ-أ": سَأَل-إسْأَل-بْتِسْأَل';
+            break;
+            
+        case "F1_P":
+            wordList = 'كسرة"إِ-ي":إجى-بْتِيجي';
+            break;
+        default:
+            wordList = "list Not Found";
+    }
+    return wordList;
+}
 
 class F1_Pattern {
     constructor()
@@ -177,3 +424,4 @@ class F2_Pattern {
     }
 
 }
+

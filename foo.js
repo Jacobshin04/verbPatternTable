@@ -997,11 +997,11 @@ F1_Pattern.prototype.F1_* = function F1_*(input, tableDisplay){
 }
  */
 
-F2_Pattern.prototype.F2_A =function F2_A(basicWord, presentArr, pastArr, commandArr){
-    he_past = basicWord[0];
-    he_command = basicWord[1];
-    she_command = basicWord[2];
-    they_command = basicWord[3];
+F2_Pattern.prototype.F2_A =function F2_A(input, tableDisplay){
+    input = arabicVowelRemove(input);
+    he_past = input.addAllVerbs(upStick, upW + upStick);
+    he_command = input.addAllVerbs(upStick, downStick + upW);
+    she_command = input.addAllVerbs(upStick, upW);
 
     presentArr = [];
     presentArr.push(this.lineL[0] + he_command); //I
@@ -1028,13 +1028,91 @@ F2_Pattern.prototype.F2_A =function F2_A(basicWord, presentArr, pastArr, command
     commandArr.push(he_command); //you1
     commandArr.push(she_command + this.lineK[0]); //you2
     commandArr.push(she_command + this.lineK[11]); //you3
-    // commandArr.push(he_command);
-    // commandArr.push(she_command);
-    // commandArr.push(they_command);
-    
-    displayArr(presentArr, pastArr, commandArr, arguments.callee.name);
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
 }
 
+F2_Pattern.prototype.F2_B =function F2_B(input, tableDisplay){
+    input = arabicVowelRemove(input);
+    he_past = input.addAllVerbs(upStick, upW + upStick);
+    he_command = input.addAllVerbs(upStick, downStick + upW).slice(0, -1);
+    she_command = input.addAllVerbs(upStick, upW).slice(0, -1);
+
+    presentArr = [];
+    presentArr.push(this.lineL[0] + he_command + this.lineK[0]); //I
+    presentArr.push(this.lineL[1] + he_command + this.lineK[0]); //you1
+    presentArr.push(this.lineL[1] + he_command + this.lineK[0]); //you2
+    presentArr.push(this.lineL[1] + she_command + this.lineK[11]); //you3
+    presentArr.push(this.lineL[3] + he_command + this.lineK[0]); //he
+    presentArr.push(presentArr[1]); //she
+    presentArr.push(this.lineL[3] + she_command + this.lineK[11]); //they
+    presentArr.push(this.lineL[2] + he_command + this.lineK[0]); //we
+
+    pastArr = [];
+    pastArr.push(she_command + this.lineO[1] + this.lineK[4]); //I
+    pastArr.push(pastArr[0]); //you1
+    pastArr.push(she_command + this.lineO[1] + this.lineK[2]); //you2
+    pastArr.push(she_command + this.lineO[1] + this.lineK[3]); //you3
+    pastArr.push(he_past); //he
+    pastArr.push(she_command + this.lineK[5]); //she
+    pastArr.push(she_command + this.lineK[11]); //they
+    pastArr.push(she_command + this.lineO[1] + this.lineK[6]); //we
+
+    commandArr = [];
+    commandArr.push(""); //I
+    commandArr.push(he_command + this.lineK[0]); //you1
+    commandArr.push(commandArr[1]); //you2
+    commandArr.push(she_command + this.lineK[11]); //you3
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
+}
+
+F2_Pattern.prototype.F2_C =function F2_C(input, tableDisplay){
+    input = arabicVowelRemove(input);
+    he_past = input.addAllVerbs(upStick, upW + upStick);
+    he_command = input.addAllVerbs(upStick, downStick + upW);
+    she_command = input.addAllVerbs(upStick, upW);
+
+    presentArr = [];
+    presentArr.push(this.lineL[0] + he_command); //I
+    presentArr.push(this.lineL[1] + he_command); //you1
+    presentArr.push(this.lineL[1] + she_command + this.lineK[0]); //you2
+    presentArr.push(this.lineL[1] + she_command + this.lineK[11]); //you3
+    presentArr.push(this.lineL[3] + he_command); //he
+    presentArr.push(presentArr[1]); //she
+    presentArr.push(this.lineL[3] + she_command + this.lineK[11]); //they
+    presentArr.push(this.lineL[2] + he_command); //we
+
+    pastArr = [];
+    pastArr.push(he_past + this.lineK[7]); //I
+    pastArr.push(pastArr[0]); //you1
+    pastArr.push(he_past + this.lineK[8]); //you2
+    pastArr.push(he_past + this.lineK[9]); //you3
+    pastArr.push(he_past); //he
+    pastArr.push(he_past + this.lineK[5]); //she
+    pastArr.push(he_past + this.lineK[11]); //they
+    pastArr.push(he_past + this.lineK[10]); //we
+
+    commandArr = [];
+    commandArr.push(""); //I
+    commandArr.push(he_command); //you1
+    commandArr.push(she_command + this.lineK[0]); //you2
+    commandArr.push(she_command + this.lineK[11]); //you3
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+    commandArr.push("");
+
+    displayArr(presentArr, pastArr, commandArr, arguments.callee.name, tableDisplay);
+}
 
 function createCell (row, text, element, pattern){
     var cellName = document.createElement(element);
@@ -1103,7 +1181,7 @@ function cellColorDisplay(element, pattern){
         return;
     }
     else{
-        element.classList.add("red");
+        element.classList.add("blue");
     }
 }
 
@@ -1147,35 +1225,27 @@ function makeWordListForm(pattern){
     var tableBody = document.createElement("tableBody"); 
     var row = document.createElement("tr");
 
-    createCell(row, pattern, "th", pattern);
-    createCell(row, getPatternArabicName(), "th", pattern);
+    createCell(row, pattern, "th", "");
+    createCell(row, getPatternArabicName(pattern), "th", "");
   
     // createCell(row, "present", "th", pattern);
     // createCell(row, "الماضي", "th", pattern);
     // createCell(row, "command", "th", pattern);
     tableBody.appendChild(row);
-    for(let i = 0; i < arrLength; i++)
+    for(let i = 0; i < getPatternWordList(pattern).length; i++)
     {
         var row = document.createElement("tr"); 
         
-        var pronounCell = document.createElement("th");
-        pronounCell.textContent = pronounList[i];
-        pronounCell.classList.add("first_column");
+        var numberCell = document.createElement("th");
+        numberCell.textContent = i;
+        numberCell.classList.add("first_column");
         // cellColorDisplay(pronounCell, pattern);
-        row.appendChild(pronounCell);
+        row.appendChild(numberCell);
 
-        var presentCell = document.createElement("td");
-        presentCell.innerHTML = presentArr[i];
-        row.appendChild(presentCell);
-      
-        var pastCell = document.createElement("td");
-        pastCell.innerHTML = pastArr[i];
-        row.appendChild(pastCell);
+        var wordCell = document.createElement("td");
+        wordCell.innerHTML = getPatternWordList(pattern)[i];
+        row.appendChild(wordCell);
 
-        var commandCell = document.createElement("td");
-        commandCell.innerHTML = commandArr[i];
-        row.appendChild(commandCell);
-     
         tableBody.appendChild(row); 
     }
 
@@ -1186,6 +1256,6 @@ function makeWordListForm(pattern){
      var lineBreak = document.createElement("br");
 
     // tableDisplay.appendChild(lineBreak);
-    tableDisplay.appendChild(table);
+    form.appendChild(table);
     document.getElementById("wordListContainer").appendChild(form);
 }
